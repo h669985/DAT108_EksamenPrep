@@ -1,0 +1,44 @@
+
+Predicate<T>: For boolske funksjonelle utrykk
+eks: t -> t % x == 0 (sjekker at t delt på x gir oss 0 i rest, setter x som parameter i metodekallet)
+eks: t -> s.contains(t) eller t::contains (vi sjekker for eks hva to lister har til felles)
+
+Consumer<T>: Utfører en operasjon på T som ikke har noen returverdi
+eks: t -> System.out::Println (her så tar vi å srkiver ut t til konsollen, som ikke har noen returverdi)
+
+
+Supplier<T>: tar ingen argumenter, men gir oss T
+eks:
+    Supplier<String[]> citySupplier = () -> {
+        return new String[]{"Mumbai", "Delhi", "Goa", "Pune"};
+    };
+(vi ser at vi produserer data uten å gi noen argumenter)
+
+
+Function<T, U>: For å utføre en operasjon på T som gir oss U (T og U kan være samme type)
+eks: t -> t.toLowerCase() (der t er en streng, så vi får streng (T) til streng (U)
+eks: t -> Integer.valueOf(t) (konverterer t til et heltall, kan brukes slik: Function<String, Integer> stringToInteger = t -> Integer.valueOf(t);)
+
+NB!
+Det finnes mange flere funksjonelle utrykk, men disse er de vanligeste.
+Mangen bygger videre på disse, for eks:
+
+      BiConsumer<T, U>, BiFunction<T, U, R>, BiPredicate<T, U>
+      BooleanSupplier
+
+      DoubleConsumer, DoubleFunction<R>, DoublePredicate,
+      DoubleSupplier, DoubleToIntFunction, DoubleToLongFunction
+
+      IntConsumer, IntFunction<R>, IntPredicate, IntSupplier,
+      IntToDoubleFunction, IntToLongFunction
+
+      LongConsumer ,LongFunction<R>, LongPredicate, LongSupplier
+      LongToDoubleFunction, LongToIntFunction
+
+      ObjDoubleConsumer<T>, ObjIntConsumer<T>, ObjLongConsumer<T>
+
+      ToDoubleBiFunction<T, U>, ToDoubleFunction<T>,
+      ToIntBiFunction<T, U>, ToIntFunction<T>,
+      ToLongBiFunction<T, U>, ToLongFunction<T>
+
+ Alle disse er egentlig bare spesialiserte versoner av Consumer, Predicate, Supplier, Function.

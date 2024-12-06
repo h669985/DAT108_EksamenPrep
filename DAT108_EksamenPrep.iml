@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="GENERAL_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Eksamener/H2020" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Eksamener/H2020/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Eksamener/H2021" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Eksamener/H2022" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Eksamener/H2023" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Eksamener/V2021" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Eksamener/V2022" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Eksamener/V2023" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Eksamener/V2024" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="openjdk-23" jdkType="JavaSDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
