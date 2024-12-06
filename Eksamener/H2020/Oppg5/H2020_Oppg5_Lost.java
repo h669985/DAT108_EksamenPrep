@@ -24,6 +24,8 @@ public class H2020_Oppg5_Lost {
      * denne metoden.
      */
 
+    // NB! Det er mange måter å løse disse oppgavene på, sjekk PDF for komentarer og alternative løsninger
+
     // Hjelpemetode for IDE validering, gjør egentlig ingen hasjing, men vi later som om den gjør det
     public static String hashOf(long number) {
         return String.valueOf(number);
