@@ -1,0 +1,24 @@
+Korrekt håndtering og lagring av brukeres passord er helt nødvendig av sikkerhets- og
+personvernhensyn.
+
+Beskriv i tekniske termer hvordan brukeres valgte passord bør prosesseres og lagres (i database) ved
+f.eks. oppretting av ny brukerkonto på en tjeneste. Fortell også hvordan de ulike skrittene i prosessen
+er med på å beskytte brukerens passord mot cracking
+
+Løsningsforslag:
+
+    Prosess:
+     - Salte (bruk individuelt salt av en viss størrelse som legges til passord), deretter
+     - Hashe (bruk sikker og treg hash-algoritme til å hashe passord+salt)
+     - Salt og hash lagres i databasen.
+
+    Beskyttelse mot cracking:
+     - Hashing generelt er en enveis funksjon, og lagring av hash betyr at
+       passordet ikke kan "dekrypteres" eller utledes. En cracker MÅ prøve
+       seg frem. En treg hash-algoritme vil gjøre crackingen mer
+       tidkrevende.
+     - Salting hjelper mot muligheten til å forhåndsberegne milliarder av hasher
+       som matcher mulige passord opp til en viss lengde. Passord pluss
+       salt vil komme i så mange kombinasjoner at det er praktisk umulig å
+       beregne hash for dem. I tillegg vil individuelle salt gjøre at like
+       passord får ulik hash.

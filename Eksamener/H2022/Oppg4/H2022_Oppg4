@@ -1,0 +1,8 @@
+Korrekt håndtering og lagring av brukeres passord er helt nødvendig av sikkerhets- og
+personvernhensyn.
+
+Beskriv i tekniske termer hvordan brukeres valgte passord bør prosesseres og lagres (i database) ved
+f.eks. oppretting av ny brukerkonto på en tjeneste. Fortell også hvordan de ulike skrittene i prosessen
+er med på å beskytte brukerens passord mot cracking
+
+Besvarelse nedenfor:

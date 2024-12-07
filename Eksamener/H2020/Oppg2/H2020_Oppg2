@@ -1,0 +1,11 @@
+Anta at en angriper har full tilgang til passord-dataene, dvs. hash og salt for alle brukernes passord,
+og at hashing-algoritmen er kjent.
+Vi snakker om tre ulike typer angrep man da kan gjøre for å finne brukeres passord.
+        1. Brute force-angrep
+        2. Ordlisteangrep
+        3. Tabelloppslag-angrep
+En av sikkerhetsmekanismene vi bruker når vi hasher passord er salting. Hvilke(n) av de tre
+angrepstypene hjelper salting mot? Hvordan? Begrunn svaret. Kan salting også hjelpe mot en
+problematikk uavhengig av angrepsmåte?
+
+Besvarelse nedenfor:

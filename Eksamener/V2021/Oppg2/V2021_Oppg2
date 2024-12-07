@@ -1,0 +1,12 @@
+Når vi lagrer passord salter, hasher og itererer vi for å generere det som skal lagres.
+    a) Hva er hashing? Hvorfor hasher vi i stedet for å bruke vanlig kryptering?
+    b) Hva er salting? Hvorfor salter vi?
+    c) Hva er iterering (key stretching)? Hvorfor itererer vi?
+
+Svar på a):
+
+
+Svar på b):
+
+
+Svar på c):

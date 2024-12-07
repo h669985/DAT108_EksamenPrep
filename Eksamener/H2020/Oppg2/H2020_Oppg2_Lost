@@ -1,0 +1,42 @@
+Anta at en angriper har full tilgang til passord-dataene, dvs. hash og salt for alle brukernes passord,
+og at hashing-algoritmen er kjent.
+Vi snakker om tre ulike typer angrep man da kan gjøre for å finne brukeres passord.
+        1. Brute force-angrep
+        2. Ordlisteangrep
+        3. Tabelloppslag-angrep
+En av sikkerhetsmekanismene vi bruker når vi hasher passord er salting. Hvilke(n) av de tre
+angrepstypene hjelper salting mot? Hvordan? Begrunn svaret. Kan salting også hjelpe mot en
+problematikk uavhengig av angrepsmåte?
+
+Løsningsforslag:
+    Brute force-angrep
+        Salting hjelper ikke mye mot dette. Den som prøver å knekke passordene
+        legger bare til saltet før hashing i hvert forsøk. Hvis antall passord
+        som skal knekkes er n kan mangel på salting i teorien redusere tiden med en
+        faktor n (kan gjenbruke beregninger på alle passordene).
+
+    Ordlisteangrep
+        Salting hjelper heller ikke mye mot dette. Ordlisteangrep er egentlig bare
+        en litt lurere måte å prøve seg frem enn brute force. Hvis antall passord
+        som skal knekkes er n kan mangel på salting i teorien redusere tiden med en
+        faktor n (kan gjenbruke beregninger på alle passordene).
+
+    Tabelloppslag-angrep
+        Oppslagstabeller inneholder mengder av ferdig usaltede! hashede passord.
+        Ved å salte med tilfeldig individuelt salt kan ikke passord forhånds-
+        hashes på denne måten. Det er rett og slett alt for mange mulige
+        salt-kombinasjoner. Salting gir en god beskyttelse mot denne typen angrep!
+
+    Generelt / uavhengig
+        Salting med individuelt salt gjør at to ulike brukere med samme passord vil
+        få ulik hash. Dette er gunstig uansett hvilket angrep man bruker. Den som
+        vil knekke passord må ta for seg hvert eneste passord, og har ikke nytte
+        av å lagre beregnete hashverdier for senere oppslag.
+
+    Merknad:
+        En del besvarelser sier at hashing av et langt passord tar lengre
+        tid enn et kort, og bruker dette som et argument for salting. Det går for
+        langt å ta dette i detalj her, men i praksis har dette liten betydning.
+        Og har man iterasjoner av hashing (key streching) er det kun input-0 som er
+        selve passordet (m/ evt. salt). Deretter vil det jo være forrige hash
+        (f.eks. 256 bit) som er input. ...

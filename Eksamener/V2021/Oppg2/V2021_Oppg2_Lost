@@ -1,0 +1,67 @@
+Når vi lagrer passord salter, hasher og itererer vi for å generere det som skal lagres.
+    a) Hva er hashing? Hvorfor hasher vi i stedet for å bruke vanlig kryptering?
+    b) Hva er salting? Hvorfor salter vi?
+    c) Hva er iterering (key stretching)? Hvorfor itererer vi?
+
+
+(min besvarelse for fasit sjekk)
+Svar på a):
+    Hashing er på en måte en enveisfunksjon via en treg algoritme.
+    Den tar gjerne et passord som streng på input og kjører den gjennom algoritmen.
+    På output får vi da en ny streng på en bestemt lengde som virker helt tilfeldig.
+    Med mindre man kjenner til algoritmen som ble brukt, så er det praktisk talt umulig å finne tilbake til
+    den originale strengen som ble kjørt gjennom funksjonen.
+
+Svar på b):
+    Salting er enkelt forklart en måte å genere en unik streng på
+    Den tar i bruk en seed fra en random number generator og kjører den gjennom en algoritme
+    for å gjøre den om til en tilfeldig streng med bestemt lengde.
+    Brukes for å skape unike hasjede passord der passordene er like, så er hasjen vi får ut forskjellige.
+
+
+Svar på c):
+Kort forklart:
+    En måte å øke beskyttelse mot brute force-angrep eller ordlisteangrep,
+    siden hasj algoritmen er treg, så kan vi for eks kjøre den 1000 ganger når vi lager et hasjet passord.
+    For en angriper så vil det være utrolig tregt å prøve å gjette seg frem til rett passord.
+
+
+
+PDF fasit:
+
+    Forslag til løsning m/kommentarer:
+
+    a) Hashing
+        Hashing (kryptografisk hashing) er en enveis avbilding av en verdi til en annen
+        verdi. Det er ikke mulig å avlede den opprinnelige verdien ut fra den avledete.
+
+        Noen egenskaper:
+             - Det er umulig å gjette seg til en hash. Nesten lik input gir helt ulik output.
+                - Hashverdier har samme størrelse (antall bits) uavhengig av størrelse på input.
+                - Ulike inputs gir ulike outputs. Det finnes «få» kollisjoner.
+
+        Vi foretrekker hashing over kryptering til passord i hovedsak av to grunner:
+                - Passord er sensitive data, og man ønsker ikke at NOEN skal kunne se disse.
+                - Kryptering er mer sårbart for hacking siden man kun trenger å finne nøkkel for å
+                  dekryptere. Hashing har ingen nøkkel, og man MÅ derfor prøve seg frem (tar tid).
+
+    b) Salting
+        Salting er det å legge til noe data i tillegg til det som skal hashes før man
+        hasher. Et salt bør ha en viss størrelse, være tilfeldig generert, og være unikt
+        per bruker/passord.
+
+        Vi bruker salting til passord siden vi ønsker å unngå at samme passord gir samme
+        hash. Uten salting kan hash til milliarder vanlige passord beregnes og lagres en
+        gang for alle slik at det er lett å finne passord som hører til en gitt hash.
+        Eller hvis du kjenner et passord, så vil andre med samme hash ha samme passord.
+        Med salting vil alle passord ha ulik hash, basert på passord+salt, slik at man
+        ikke kan utlede passord fra gitt hash.
+
+
+    c) Iterering
+        Angrepsteknikker for å finne passord innebærer å prøve seg frem (enten brute-force
+        eller via ordliste). For å gi økt beskyttelse ønsker vi å gjøre hashingen treig.
+        Formålet med iterering, dvs. å hashe mange ganger i stedet for én, er å gjøre
+        hashingen treig, f.eks. 1000 ganger treigere enn om man kun trengte å beregne én
+        hash per forsøk. Key streching er en samlebetegnelse på teknikker som har det
+        nevnte som formål.
